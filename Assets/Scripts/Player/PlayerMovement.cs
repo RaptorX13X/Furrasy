@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")] 
     [SerializeField] private CharacterController controller;
     private Camera camera;
+    [SerializeField] private GameObject cinemachine;
 
     [Header("Movement Stats")] 
     [SerializeField] private float walkingSpeed;
@@ -78,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FaceMovementDirection(Vector3 movement)
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * rotationDamp); // jebalem ci matke
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * rotationDamp); // jebalem ci matke 
     }
 
     private void IncreaseSpeed()
