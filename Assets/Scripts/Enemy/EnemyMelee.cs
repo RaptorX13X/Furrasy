@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class EnemyRanged : MonoBehaviour
+public class EnemyMelee : MonoBehaviour
 {
-    [SerializeField] private GameObject gunPoint;
-    [SerializeField] private GameObject bananaPrefab;
+    [SerializeField] private NavMeshAgent agent;
     [SerializeField] private float cooldown;
     private Transform target;
     private float remainingCooldown;
+    [SerializeField] private float range;
+    
+    
 
     private void Awake()
     {
@@ -18,18 +21,29 @@ public class EnemyRanged : MonoBehaviour
 
     private void Update()
     {
-        if (remainingCooldown != 0)
+        if (remainingCooldown > 0f)
         {
             remainingCooldown -= Time.deltaTime;
         }
         if (target == null) return;
+        Debug.Log("target set");
         Vector3 lookPos = target.position - transform.position;
         lookPos.y = 0f;
         transform.rotation = Quaternion.LookRotation(lookPos);
-        if (remainingCooldown <= 0.1f)
+        agent.SetDestination(target.position);
+        if (remainingCooldown <= 0.01f)
         {
-            Instantiate(bananaPrefab, gunPoint.transform.position, transform.rotation);
+            Attack();
             remainingCooldown = cooldown;
+        }
+    }
+
+    private void Attack()
+    {
+        if (Vector3.Distance(target.position, transform.position) <= range)
+        {
+            target.TryGetComponent(out Helf helf);
+            helf.TakeDamage();
         }
     }
 

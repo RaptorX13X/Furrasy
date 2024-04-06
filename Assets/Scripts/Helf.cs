@@ -13,9 +13,26 @@ public class Helf : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        currentHealth -= damage;
+        currentHealth -= 1;
         Debug.Log(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (gameObject.CompareTag("Player"))
+        {
+            //player death
+        }
     }
 }

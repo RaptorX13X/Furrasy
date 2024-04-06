@@ -7,7 +7,6 @@ public class PewPew : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField] private float speed;
-    [SerializeField] private int damage;
     [SerializeField] private float despawnTime;
     private float lifetime;
     private bool hit;
@@ -35,7 +34,7 @@ public class PewPew : MonoBehaviour
 
         if (other.TryGetComponent(out Helf helf))
         {
-            helf.TakeDamage(damage);
+            helf.TakeDamage();
         }
         Destroy(gameObject);
     }
