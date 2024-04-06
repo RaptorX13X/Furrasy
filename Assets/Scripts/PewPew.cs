@@ -32,8 +32,11 @@ public class PewPew : MonoBehaviour
     {
         hit = true;
         collider.enabled = false;
-        
-        //if hit something with health component, deal damage
+
+        if (other.TryGetComponent(out Helf helf))
+        {
+            helf.TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }

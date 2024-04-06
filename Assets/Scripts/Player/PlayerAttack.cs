@@ -12,15 +12,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        remainingCooldown = 0;
+        remainingCooldown = 0f;
     }
 
     private void Update()
     {
         if (Input.GetMouseButton(0) && remainingCooldown <= 0.01f)
         {
-            Debug.Log("sram");
-            Instantiate(laserPrefab, gunPoint.transform.position, Quaternion.identity);
+            Instantiate(laserPrefab, gunPoint.transform.position, transform.rotation);
             remainingCooldown = cooldown;
         }
 
