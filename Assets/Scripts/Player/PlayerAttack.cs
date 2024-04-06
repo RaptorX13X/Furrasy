@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && remainingCooldown <= 0.01f)
         {
-            Instantiate(laserPrefab, gunPoint.transform.position, transform.rotation);
+            Instantiate(laserPrefab, gunPoint.transform.position, gunPoint.transform.rotation);
             remainingCooldown = cooldown;
         }
 

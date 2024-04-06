@@ -22,6 +22,15 @@ public class PlayerMovement : MonoBehaviour
     private float verticalVelocity;
     private bool isJumping;
     private int jumpCount;
+    
+    [Header("Materials")] 
+    [SerializeField] private MeshRenderer renderer;
+    [SerializeField] private Material forwardMaterial;
+    [SerializeField] private Material backMaterial;
+    [SerializeField] private Material leftMaterial;
+    [SerializeField] private Material rightMaterial;
+
+    
 
     private void Start()
     {
@@ -61,6 +70,26 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             DecreaseSpeed();
+        }
+
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            renderer.material = backMaterial;
+        }
+
+        if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            renderer.material = forwardMaterial;
+        }
+
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            renderer.material = rightMaterial;
+        }
+
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            renderer.material = leftMaterial;
         }
     }
 
