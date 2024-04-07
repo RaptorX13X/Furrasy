@@ -18,7 +18,7 @@ public class EnemyRanged : MonoBehaviour
 
     private void Update()
     {
-        if (remainingCooldown != 0)
+        if (remainingCooldown > 0)
         {
             remainingCooldown -= Time.deltaTime;
         }

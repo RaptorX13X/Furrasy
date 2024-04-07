@@ -7,7 +7,12 @@ public class Helf : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     private int currentHealth;
+    public event Action<Helf> OnDestroyed;
 
+    private void OnDestroy()
+    {
+        OnDestroyed?.Invoke(this);
+    }
     private void Start()
     {
         currentHealth = maxHealth;

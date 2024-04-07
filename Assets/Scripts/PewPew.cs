@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PewPew : MonoBehaviour
@@ -11,6 +12,7 @@ public class PewPew : MonoBehaviour
     private float lifetime;
     private bool hit;
     private Collider collider;
+    [SerializeField] private GameObject hitParticlePrefab;
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class PewPew : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         hit = true;
+        Instantiate(hitParticlePrefab, transform.position, Quaternion.identity);
         collider.enabled = false;
 
         if (other.TryGetComponent(out Helf helf))
