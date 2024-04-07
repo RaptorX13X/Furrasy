@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 5114737219410742444, guid: 11b6e17ae27603f47aaf5807caa42ffb,
         type: 3}
       propertyPath: m_Name
-      value: PointPickUp Variant
+      value: PointPickUp
       objectReference: {fileID: 0}
     - target: {fileID: 5598223695924565526, guid: 11b6e17ae27603f47aaf5807caa42ffb,
         type: 3}
@@ -130,7 +130,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0

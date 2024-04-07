@@ -101,8 +101,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forward = camera.transform.forward;
         Vector3 right = camera.transform.right;
         Vector3 gravity = new Vector3(0f, verticalVelocity, 0f);
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
         
         right.y = 0f;
         forward.y = 0f;
