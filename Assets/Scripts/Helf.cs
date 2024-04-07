@@ -7,6 +7,7 @@ public class Helf : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private AudioClip playerDamagedSound;
+    [SerializeField] private GameObject[] fullHealths;
     private int currentHealth;
     public event Action<Helf> OnDestroyed;
 
@@ -23,6 +24,10 @@ public class Helf : MonoBehaviour
     {
         currentHealth -= 1;
         Debug.Log(currentHealth);
+        if (gameObject.CompareTag("Player"))
+        {
+            fullHealths[currentHealth].SetActive(false);
+        }
         if (currentHealth > 0 && gameObject.CompareTag("Player"))
         {
             SoundManager.instance.PlaySound(playerDamagedSound);
