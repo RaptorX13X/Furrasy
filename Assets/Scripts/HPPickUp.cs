@@ -5,6 +5,7 @@ using UnityEngine;
 public class HPPickUp : MonoBehaviour
 {
     private GameObject player;
+    [SerializeField] private AudioClip hpSound;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class HPPickUp : MonoBehaviour
         if (other.TryGetComponent(out Helf helf) && other.CompareTag("Player"))
         {
             helf.AddHealth();
+            SoundManager.instance.PlaySound(hpSound);
             Destroy(this.gameObject);
         }
     }

@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Material leftMaterial;
     [SerializeField] private Material rightMaterial;
 
+    [SerializeField] private GameObject victoryScreen;
+
     private void Awake()
     {
         Time.timeScale = 1f;
@@ -93,6 +95,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             renderer.material = leftMaterial;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            victoryScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+            Time.timeScale = 0f;
         }
     }
 

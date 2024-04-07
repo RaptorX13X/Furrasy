@@ -12,7 +12,7 @@ public class ScoreScene : MonoBehaviour
 
     private void Start()
     {
-        scoreText.text = pointManager.score.ToString();
+        scoreText.text = pointManager.score + " / 107";
     }
 
     public void MainMenuButton()

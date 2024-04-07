@@ -7,6 +7,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     private GameObject player;
+    [SerializeField] private AudioClip figSound;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class PickUp : MonoBehaviour
         if (other.TryGetComponent(out PointManager pointManager))
         {
             pointManager.AddPoint();
+            SoundManager.instance.PlaySound(figSound);
             Destroy(this.gameObject);
         }
     }

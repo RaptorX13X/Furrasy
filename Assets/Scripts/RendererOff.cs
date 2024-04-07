@@ -10,6 +10,6 @@ public class RendererOff : MonoBehaviour
     private void Start()
     {
         renderer = GetComponent<MeshRenderer>();
-        //renderer.enabled = false;
+        renderer.enabled = false;
     }
 }

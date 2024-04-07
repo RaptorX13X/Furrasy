@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c2138f14962384f9f1aeaa00ae9637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figSound: {fileID: 8300000, guid: 9755255522768dd4e8fc4b7f9fb4d452, type: 3}
 --- !u!114 &-3381672108389039257
 MonoBehaviour:
   m_ObjectHideFlags: 0
