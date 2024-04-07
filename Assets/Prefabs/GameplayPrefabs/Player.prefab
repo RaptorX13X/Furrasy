@@ -5236,17 +5236,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f83c2d1855bdf4441b697628af5c14f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1501627
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f83c2d1855bdf4441b697628af5c14f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f83c2d1855bdf4441b697628af5c14f9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.014668702
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f83c2d1855bdf4441b697628af5c14f9,
         type: 3}
@@ -5467,6 +5467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ac6ecee282c6241bdbe2bcca45c3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointText: {fileID: 0}
 --- !u!95 &247495783555234894
 Animator:
   serializedVersion: 5

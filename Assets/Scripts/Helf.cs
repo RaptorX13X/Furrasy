@@ -38,6 +38,13 @@ public class Helf : MonoBehaviour
         }
     }
 
+    public void AddHealth()
+    {
+        if (currentHealth == 5) return;
+        currentHealth += 1;
+        fullHealths[currentHealth - 1].SetActive(true);
+    }
+
     private void Die()
     {
         if (gameObject.CompareTag("Enemy"))
