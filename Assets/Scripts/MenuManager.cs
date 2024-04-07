@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private GameObject tootCanvas;
+    [SerializeField] private GameObject menuCanvas;
+
+    private void Start()
+    {
+        menuCanvas.SetActive(true);
+        tootCanvas.SetActive(false);
+    }
+
     public void StartButton()
     {
         SceneManager.LoadScene(1);
@@ -12,7 +22,14 @@ public class MenuManager : MonoBehaviour
 
     public void HowToButton()
     {
-        Debug.Log("to be implemented");
+        menuCanvas.SetActive(false);
+        tootCanvas.SetActive(true);
+    }
+
+    public void ReturnFromToot()
+    {
+        menuCanvas.SetActive(true);
+        tootCanvas.SetActive(false);
     }
 
     public void ExitButton()
