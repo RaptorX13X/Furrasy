@@ -8,11 +8,13 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject tootCanvas;
     [SerializeField] private GameObject menuCanvas;
+    [SerializeField] private GameObject creditsCanvas;
 
     private void Start()
     {
         menuCanvas.SetActive(true);
         tootCanvas.SetActive(false);
+        creditsCanvas.SetActive(false);
     }
 
     public void StartButton()
@@ -30,6 +32,18 @@ public class MenuManager : MonoBehaviour
     {
         menuCanvas.SetActive(true);
         tootCanvas.SetActive(false);
+    }
+
+    public void Credits()
+    {
+        menuCanvas.SetActive(false);
+        creditsCanvas.SetActive(true);
+    }
+    
+    public void CreditsLeave()
+    {
+        menuCanvas.SetActive(true);
+        creditsCanvas.SetActive(false);
     }
 
     public void ExitButton()
