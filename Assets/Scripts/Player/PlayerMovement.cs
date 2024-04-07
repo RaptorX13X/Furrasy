@@ -30,7 +30,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Material leftMaterial;
     [SerializeField] private Material rightMaterial;
 
-    
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
 
     private void Start()
     {
