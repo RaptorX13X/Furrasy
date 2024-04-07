@@ -5432,7 +5432,7 @@ MonoBehaviour:
   rotationDamp: 0
   accelerationSpeed: 20
   currentSpeed: 0
-  jumpForce: 3
+  jumpForce: 2
   renderer: {fileID: 8001339931019176558}
   forwardMaterial: {fileID: 2100000, guid: ae50b21b33580a14db14d1e58abcc9de, type: 2}
   backMaterial: {fileID: 2100000, guid: 7b406dedb9dd0794aa11d6e57214152b, type: 2}
@@ -5502,6 +5502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   playerDamagedSound: {fileID: 8300000, guid: 07e33e6a499fb9b48bd8b1aa6a4284af, type: 3}
+  fullHealths: []
 --- !u!4 &9169703339247800577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f83c2d1855bdf4441b697628af5c14f9,
