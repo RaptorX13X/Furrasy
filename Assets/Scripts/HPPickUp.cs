@@ -20,7 +20,7 @@ public class HPPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Helf helf))
+        if (other.TryGetComponent(out Helf helf) && other.CompareTag("Player"))
         {
             helf.AddHealth();
             Destroy(this.gameObject);
