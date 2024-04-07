@@ -184,7 +184,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 94
   m_CollisionDetection: 0
 --- !u!114 &2185574288137827330
 MonoBehaviour:
@@ -200,6 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   playerDamagedSound: {fileID: 0}
+  fullHealths: []
+  lossScreen: {fileID: 0}
+  inGameUI: {fileID: 0}
 --- !u!135 &2676717424132825587
 SphereCollider:
   m_ObjectHideFlags: 0
