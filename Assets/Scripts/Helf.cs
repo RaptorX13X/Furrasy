@@ -10,6 +10,7 @@ public class Helf : MonoBehaviour
     [SerializeField] private GameObject[] fullHealths;
     private int currentHealth;
     [SerializeField] private GameObject lossScreen;
+    [SerializeField] private GameObject inGameUI;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -49,6 +50,7 @@ public class Helf : MonoBehaviour
 
         if (gameObject.CompareTag("Player"))
         {
+            inGameUI.SetActive(false);
             lossScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0f;
