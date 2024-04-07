@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51df61c5eaa9834c89173dd86ab687d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   despawnTime: 1
   hitParticlePrefab: {fileID: 2535446501989206163, guid: 10a9c70dd8bb3b04ab7b6bc0a60dc813,
     type: 3}

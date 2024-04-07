@@ -147,5 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  damage: 0
   despawnTime: 5
+  hitParticlePrefab: {fileID: 2535446501989206163, guid: 10a9c70dd8bb3b04ab7b6bc0a60dc813,
+    type: 3}

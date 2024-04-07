@@ -6,6 +6,7 @@ using UnityEngine;
 public class Helf : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
+    [SerializeField] private AudioClip playerDamagedSound;
     private int currentHealth;
     public event Action<Helf> OnDestroyed;
 
@@ -22,6 +23,10 @@ public class Helf : MonoBehaviour
     {
         currentHealth -= 1;
         Debug.Log(currentHealth);
+        if (currentHealth > 0 && gameObject.CompareTag("Player"))
+        {
+            SoundManager.instance.PlaySound(playerDamagedSound);
+        }
         if (currentHealth <= 0)
         {
             Die();

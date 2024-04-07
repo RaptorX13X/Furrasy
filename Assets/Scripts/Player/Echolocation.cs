@@ -9,6 +9,7 @@ public class Echolocation : MonoBehaviour
     public List<MeshRenderer> renderers = new List<MeshRenderer>();
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private float cooldown;
+    [SerializeField] private AudioClip echoSound;
     private float remainingCooldown;
 
     private void OnTriggerEnter(Collider other)
@@ -39,10 +40,11 @@ public class Echolocation : MonoBehaviour
         {
             remainingCooldown -= Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && remainingCooldown <= 0f)
         {
             particles.Play();
             remainingCooldown = cooldown;
+            SoundManager.instance.PlaySound(echoSound);
             foreach (MeshRenderer renderer in renderers)
             {
                 if (renderer == null)

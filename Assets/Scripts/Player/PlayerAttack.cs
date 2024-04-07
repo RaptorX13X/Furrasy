@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float cooldown;
     [SerializeField] private GameObject gunPoint;
+    [SerializeField] private AudioClip shootSound;
     private float remainingCooldown;
 
     private void Awake()
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButton(0) && remainingCooldown <= 0.01f)
         {
             Instantiate(laserPrefab, gunPoint.transform.position, gunPoint.transform.rotation);
+            SoundManager.instance.PlaySound(shootSound);
             remainingCooldown = cooldown;
         }
 
