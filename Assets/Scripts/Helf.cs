@@ -9,12 +9,7 @@ public class Helf : MonoBehaviour
     [SerializeField] private AudioClip playerDamagedSound;
     [SerializeField] private GameObject[] fullHealths;
     private int currentHealth;
-    public event Action<Helf> OnDestroyed;
-
-    private void OnDestroy()
-    {
-        OnDestroyed?.Invoke(this);
-    }
+    [SerializeField] private GameObject lossScreen;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -45,7 +40,7 @@ public class Helf : MonoBehaviour
         fullHealths[currentHealth - 1].SetActive(true);
     }
 
-    private void Die()
+    public void Die()
     {
         if (gameObject.CompareTag("Enemy"))
         {
@@ -54,7 +49,9 @@ public class Helf : MonoBehaviour
 
         if (gameObject.CompareTag("Player"))
         {
-            //player death
+            lossScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+            Time.timeScale = 0f;
         }
     }
 }

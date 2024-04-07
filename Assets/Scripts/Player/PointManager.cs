@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PointManager : MonoBehaviour
 {
-    private int score;
+    public int score;
     [SerializeField] private TextMeshProUGUI pointText;
 
     private void Awake()
