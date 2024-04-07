@@ -4907,6 +4907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderers: []
   particles: {fileID: 8237703911219722166}
+  cooldown: 1.5
 --- !u!135 &1734907142605997800
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5154,6 +5155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f83c2d1855bdf4441b697628af5c14f9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
