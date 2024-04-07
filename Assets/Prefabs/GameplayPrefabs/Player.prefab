@@ -912,7 +912,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 434e95a93ac2f6a4abab151877df8b27, type: 3}
+    m_Texture: {fileID: 2800000, guid: 4843851a3ee44884bb1d735636774a61, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -4949,7 +4949,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3847ac662f61d0f4b88bb3f06beb4f46, type: 2}
+  - {fileID: 2100000, guid: 70088fe8b01bfc849935e9b988f0d9c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5467,6 +5467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ac6ecee282c6241bdbe2bcca45c3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   pointText: {fileID: 0}
 --- !u!95 &247495783555234894
 Animator:
@@ -5504,6 +5505,8 @@ MonoBehaviour:
   maxHealth: 5
   playerDamagedSound: {fileID: 8300000, guid: 07e33e6a499fb9b48bd8b1aa6a4284af, type: 3}
   fullHealths: []
+  lossScreen: {fileID: 0}
+  inGameUI: {fileID: 0}
 --- !u!4 &9169703339247800577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f83c2d1855bdf4441b697628af5c14f9,
