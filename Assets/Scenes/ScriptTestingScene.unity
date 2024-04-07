@@ -4522,6 +4522,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4518827537173467978, guid: 0c1f5a8f0c9b03b4fb5b40be2e70a198,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70088fe8b01bfc849935e9b988f0d9c2, type: 2}
+    - target: {fileID: 8237703911219722166, guid: 0c1f5a8f0c9b03b4fb5b40be2e70a198,
+        type: 3}
+      propertyPath: ShapeModule.m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 4843851a3ee44884bb1d735636774a61, type: 3}
     - target: {fileID: 8361641025850330043, guid: 0c1f5a8f0c9b03b4fb5b40be2e70a198,
         type: 3}
       propertyPath: m_Name
