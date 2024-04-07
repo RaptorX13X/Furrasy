@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            verticalVelocity += Physics.gravity.y * Time.deltaTime;
+            verticalVelocity += (Physics.gravity.y / 2) * Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && (controller.isGrounded || (isJumping && jumpCount < 2)))
