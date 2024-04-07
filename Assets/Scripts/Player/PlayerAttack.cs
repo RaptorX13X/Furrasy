@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
             remainingCooldown = cooldown;
         }
 
-        if (remainingCooldown != 0)
+        if (remainingCooldown > 0)
         {
             remainingCooldown -= Time.deltaTime;
         }
