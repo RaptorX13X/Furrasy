@@ -7,6 +7,7 @@ public class RespawnController : MonoBehaviour
     [SerializeField] private Helf playerHelf;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private CharacterController controller;
+    [SerializeField] private AudioClip checkPointSound;
 
     public void Respawn()
     {
@@ -14,5 +15,12 @@ public class RespawnController : MonoBehaviour
         controller.enabled = false;
         transform.position = respawnPoint.position;
         controller.enabled = true;
+    }
+
+    public void SetRespawnAtCheckpoint(Transform newRespawn)
+    {
+        if (newRespawn == respawnPoint) return;
+        respawnPoint = newRespawn;
+        //SoundManager.instance.PlaySound(checkPointSound);
     }
 }
