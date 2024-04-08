@@ -7,7 +7,16 @@ public class FloorIsLava : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        other.TryGetComponent(out Helf helf);
-        helf.Die();
+        if (other.CompareTag("Enemy"))
+        {
+            other.TryGetComponent(out Helf helf);
+            helf.Die();
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            other.TryGetComponent(out RespawnController respawn);
+            respawn.Respawn();
+        }
     }
 }
