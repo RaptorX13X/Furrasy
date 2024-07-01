@@ -9,7 +9,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject tootCanvas;
     [SerializeField] private GameObject menuCanvas;
     [SerializeField] private GameObject creditsCanvas;
+    [SerializeField] private loadingSO loadingSo;
 
+    
+    public SaveData saveData;
+    
     private void Start()
     {
         menuCanvas.SetActive(true);
@@ -19,7 +23,20 @@ public class MenuManager : MonoBehaviour
 
     public void StartButton()
     {
+        loadingSo.loading = false;
         SceneManager.LoadScene(1);
+    }
+    public void Lvl2()
+    {
+        loadingSo.loading = false;
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoadButton()
+    {
+        saveData = (SaveData)SerializationManager.Load("test");
+        loadingSo.loading = true;
+        SceneManager.LoadScene(saveData.sceneNumber);
     }
 
     public void HowToButton()

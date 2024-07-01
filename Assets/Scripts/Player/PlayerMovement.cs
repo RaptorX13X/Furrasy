@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private float verticalVelocity;
     private bool isJumping;
     private int jumpCount;
-    
+
     [Header("Materials")] 
     [SerializeField] private MeshRenderer renderer;
     [SerializeField] private Material forwardMaterial;
@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Material rightMaterial;
 
     [SerializeField] private GameObject victoryScreen;
+
+    public int sceneNumber;
 
     private void Awake()
     {

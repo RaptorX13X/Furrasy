@@ -15,4 +15,6 @@ public class SaveData
 
     public int playerPoints;
     public int playerHealth;
+
+    public int sceneNumber;
 }
