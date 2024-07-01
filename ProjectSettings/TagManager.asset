@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - Enemy
+  - SaveSystem
   layers:
   - Default
   - TransparentFX

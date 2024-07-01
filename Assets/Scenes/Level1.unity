@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 212968209}
   m_Layer: 0
   m_Name: SAVESYSTEM
-  m_TagString: Untagged
+  m_TagString: SaveSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2668,9 +2668,11 @@ MonoBehaviour:
     playerPosition: {x: 0, y: 0, z: 0}
     playerRotation: {x: 0, y: 0, z: 0, w: 0}
     playerPoints: 0
+    playerHealth: 0
   playerGameObject: {fileID: 387944887}
   pointManager: {fileID: 1877275132}
   controller: {fileID: 1877275147}
+  playerHealth: {fileID: 1877275143}
 --- !u!4 &212968210
 Transform:
   m_ObjectHideFlags: 0

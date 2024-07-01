@@ -14,4 +14,5 @@ public class SaveData
     public Quaternion playerRotation;
 
     public int playerPoints;
+    public int playerHealth;
 }

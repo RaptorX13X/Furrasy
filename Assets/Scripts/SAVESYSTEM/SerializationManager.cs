@@ -43,7 +43,7 @@ public class SerializationManager
         }
         catch
         {
-            Debug.LogError($"Failed to load save file{saveName}");
+            Debug.LogError($"Failed to load save file {saveName}");
             return null;
         }
     }
@@ -58,7 +58,7 @@ public class SerializationManager
 
         QuaternionSerializationSurrogate quaternionSerializationSurrogate = new();
         surrogateSelector.AddSurrogate(typeof(Quaternion), new StreamingContext(StreamingContextStates.All), quaternionSerializationSurrogate);
-
+        
         binaryFormatter.SurrogateSelector = surrogateSelector;
         
         return binaryFormatter;

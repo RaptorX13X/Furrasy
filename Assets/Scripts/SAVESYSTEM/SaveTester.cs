@@ -10,7 +10,8 @@ public class SaveTester : MonoBehaviour
     public GameObject playerGameObject;
     public PointManager pointManager;
     public CharacterController controller;
-    
+    public Helf playerHealth;
+
     [ContextMenu("Save")]
     public void Save()
     {
@@ -18,6 +19,8 @@ public class SaveTester : MonoBehaviour
         saveData.playerPoints = pointManager.score;
         saveData.playerPosition = playerGameObject.transform.position;
         saveData.playerRotation = playerGameObject.transform.rotation;
+        saveData.playerHealth = playerHealth.currentHealth;
+        
         SerializationManager.Save("test", saveData);
     }
 
@@ -27,6 +30,9 @@ public class SaveTester : MonoBehaviour
         Debug.Log("I'm loading");
         saveData = (SaveData)SerializationManager.Load("test");
         pointManager.score = saveData.playerPoints;
+        pointManager.UpdateUI();
+        playerHealth.currentHealth = saveData.playerHealth;
+        playerHealth.UpdateUI();
         controller.enabled = false;
         playerGameObject.transform.position = saveData.playerPosition;
         playerGameObject.transform.rotation = saveData.playerRotation;

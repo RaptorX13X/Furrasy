@@ -8,10 +8,12 @@ public class PickUp : MonoBehaviour
 {
     private GameObject player;
     [SerializeField] private AudioClip figSound;
+    [SerializeField] private SaveData saveData;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        saveData = GameObject.FindGameObjectWithTag("SaveSystem").GetComponent<SaveData>();
     }
 
     private void Update()
@@ -27,7 +29,7 @@ public class PickUp : MonoBehaviour
         {
             pointManager.AddPoint();
             SoundManager.instance.PlaySound(figSound);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

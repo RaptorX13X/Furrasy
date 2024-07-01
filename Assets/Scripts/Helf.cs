@@ -8,7 +8,7 @@ public class Helf : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private AudioClip playerDamagedSound;
     [SerializeField] private GameObject[] fullHealths;
-    private int currentHealth;
+    public int currentHealth;
     [SerializeField] private GameObject lossScreen;
     [SerializeField] private GameObject inGameUI;
     private void Start()
@@ -39,6 +39,17 @@ public class Helf : MonoBehaviour
         if (currentHealth == 5) return;
         currentHealth += 1;
         fullHealths[currentHealth - 1].SetActive(true);
+    }
+
+    public void UpdateUI()
+    {
+        for (int i = maxHealth - 1; i >= 0; i--)
+        {
+            if (currentHealth <= i)
+            {
+                fullHealths[i].SetActive(false);
+            }
+        }
     }
 
     public void Die()
