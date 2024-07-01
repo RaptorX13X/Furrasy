@@ -20,4 +20,9 @@ public class PointManager : MonoBehaviour
         score += 1;
         pointText.text = score.ToString();
     }
+
+    public void UpdateUI()
+    {
+        pointText.text = score.ToString();
+    }
 }
